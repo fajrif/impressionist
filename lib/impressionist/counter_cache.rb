@@ -24,7 +24,7 @@ module Impressionist
 
       def set_impressionable_class
         klass = self.impressionable_type  || false
-        @impressionable_class = klass.to_s.try(:safe_constantize) || klass.to_s.try(:constantize) || false
+        @impressionable_class = klass.to_s.constantize || false
       end
 
       def impressionist_log(str, mode=:error)
